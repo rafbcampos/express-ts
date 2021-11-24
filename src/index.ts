@@ -24,6 +24,7 @@ app.post('/', async (req, res) => {
 })
 
 const server = app.listen(port, () => {
+  // eslint-disable-next-line no-console
   console.log(`Running on port ${port}.`)
 })
 

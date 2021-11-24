@@ -3,7 +3,7 @@ import { isObject } from '../../src/utils/isObject'
 describe('isObject', () => {
   it('returns true for an object', () => {
     expect(isObject({})).toBeTruthy()
-    expect(isObject({ test: test })).toBeTruthy()
+    expect(isObject({ test: 'test' })).toBeTruthy()
   })
 
   it('returns false for an Array', () => {

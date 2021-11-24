@@ -10,12 +10,13 @@ async function validate(obj: Record<string, any>): Promise<{
     const input = await schema.validate(obj, { abortEarly: false })
     return { input, errors: null }
   } catch (err) {
-    const errorsByField = (err as ValidationError).inner.reduce((acc, curr) => {
-      return {
+    const errorsByField = (err as ValidationError).inner.reduce(
+      (acc, curr) => ({
         ...acc,
         [curr.path ?? curr.name]: curr.errors,
-      }
-    }, {} as Partial<Record<keyof UserInput, string[]>>)
+      }),
+      {} as Partial<Record<keyof UserInput, string[]>>
+    )
     return { input: {}, errors: errorsByField }
   }
 }

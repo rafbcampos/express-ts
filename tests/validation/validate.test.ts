@@ -1,4 +1,3 @@
-import { ValidationError } from 'yup'
 import { UserInput } from '../../src/types'
 import { validate } from '../../src/validation'
 

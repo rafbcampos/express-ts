@@ -26,7 +26,7 @@ const invalidInput1 = {
   numberOfDependents: 2,
 }
 
-describe('POST /', function () {
+describe('POST /', () => {
   afterAll(() => {
     server.close()
   })
